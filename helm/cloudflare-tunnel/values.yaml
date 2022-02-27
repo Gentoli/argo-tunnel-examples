@@ -37,6 +37,8 @@ imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
 
+secretAnnotations: {}
+
 serviceAccount:
   # Annotations to add to the service account
   annotations: {}
