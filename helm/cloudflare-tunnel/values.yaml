@@ -11,6 +11,8 @@ cloudflare:
   tunnelId: ""
   # The secret for the tunnel.
   secret: ""
+  # The origin certificate for the tunnel.
+  origincert: null
   # If true, turn on WARP routing for TCP
   enableWarp: false
   # Define ingress rules for the tunnel. See

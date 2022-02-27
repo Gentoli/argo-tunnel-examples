@@ -62,12 +62,19 @@ spec:
             - name: creds
               mountPath: /etc/cloudflared/creds
               readOnly: true
+            - name: origincert
+              mountPath: /etc/cloudflared/
+              readOnly: true
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       volumes:
         - name: creds
           secret:
             secretName: {{ default (include "cloudflare-tunnel.fullname" .) .Values.cloudflare.secretRef }}
+        - name: origincert
+          secret:
+            secretName: {{ include "cloudflare-tunnel.fullname" . }}-origincert
+            optional: true
         - name: config
           configMap:
             name: {{ include "cloudflare-tunnel.fullname" . }}
