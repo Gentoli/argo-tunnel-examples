@@ -26,6 +26,8 @@ cloudflare:
     # in the connection from cloudflared to your local service, not from the internet to cloudflared.
     # - hostname: hello.example.com
     #   service: hello_world
+  # Define a static 404 rule after all ingresses
+  ingressCatchAll: true
 
 image:
   repository: cloudflare/cloudflared
